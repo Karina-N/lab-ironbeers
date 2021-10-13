@@ -41,13 +41,13 @@ app.get('/random-beer', (req, res) => {
     .catch(error => console.log(error));
 });
 
-app.get('/specific-beer', (req, res) => {
+app.get('/beers/:id', (req, res) => {
+  const beerId = req.params.id;
   punkAPI
-    .getBeers('id')
-    .then(beersIdFromApi => {
-      console.log(beersIdFromApi.id);
-      // console.log(beersIdFromApi);
-      res.render('specific-beer', beersIdFromApi);
+    .getBeer(beerId)
+    .then(beer => {
+      console.log(beer[0]);
+      res.render('specific-beer', beer[0]);
     })
     .catch(error => console.log(error));
 });
