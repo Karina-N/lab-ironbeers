@@ -1,6 +1,10 @@
 <div class='beer-main-content'>
-  <img height='100' src='{{image_url}}' alt='' />
-  <a href='beers/beer-{{id}}'><h2>{{name}}</h2></a>
-  <h3>{{tagline}}</h3>
-  <p>{{description}}</p>
+  <div class="beer-image">
+    <img height='100' src='{{image_url}}' alt='' />
+  </div>
+  <div class="beer-details">
+    <a href='/specific-beer'>{{name}}</a>
+    <p class="tagline">{{tagline}}</p>
+    <p>{{description}}</p>
+  </div>
 </div>
